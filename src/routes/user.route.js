@@ -1,10 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const {emailSent} = require("../controllers/user");
-const {register, login} = require("../middleware/validation");
+const {finalRegister, login} = require("../controllers/user");
+const {validate} = require("../middleware/validate")
+const {registerSchema} = require("../validators/reg")
+const {loginSchema} = require("../validators/login")
+// const {validateRegister} = require("../validators/reg")
+// const {validateLogin} = require("../validators/login")
+// const {validateRegister} = require("../validators/reg")
+// const {validateLogin} = require("../validators/login")
 
-router.post("/register", register,  emailSent);
-router.post("/login", login);
+router.post("/register", validate(registerSchema), finalRegister);
+router.post("/login", validate(loginSchema), login);
 
 
 

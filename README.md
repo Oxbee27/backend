@@ -1,8 +1,8 @@
 Authentication (JWT) -- done
-Authorization 
+Authorization -- done 
 Environment variables -- done
 File uploads
-Error handling
+Error handling -- done 
 Logger -- done
-Validation -- done
+Validation -- done 
 

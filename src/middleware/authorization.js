@@ -16,6 +16,7 @@ const authorization = (req, res, next) => {
   }
 
   if (typeof next === "function") {
+    
     next();
   }
 };

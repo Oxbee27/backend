@@ -9,3 +9,5 @@ router.get("/admin", authenticate, authorization, admin);
 router.get("/user", authenticate, user);
 
 module.exports = router;
+
+

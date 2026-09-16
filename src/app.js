@@ -5,6 +5,7 @@ const logger = require("./middleware/logger");
 const errorHandler = require("./middleware/error");
 const userRoutes = require("./routes/user.route");
 const roleRoutes = require("./routes/role.route");
+const uploadRoutes = require("./routes/upload.route");
 
 // Middleware
 app.use(express.json());
@@ -21,6 +22,8 @@ app.get("/", logger, (req, res) => {
 
 app.use("/user", logger, userRoutes)
 app.use("/role", logger, roleRoutes)
+app.use("/file", logger, uploadRoutes)
+
 
 // Error handler (must be last, 4-arg middleware)
 app.use(errorHandler)
